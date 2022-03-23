@@ -1,15 +1,23 @@
+from time import sleep
 from blinker import *
 from engine import *
+from environment import *
+from light import *
 from fuel import *
+
 class Vehicle:
     def __init__(self):
         self.blinker_front = Blinker(BLINKER_FRONT)
         self.blinker_rear = Blinker(BLINKER_REAR)
         self.engine = engine() #una instancia
+        self.environment = Environment()
+        self.light = Light(self.environment)
         self.fuel = Fuel(self.engine)
 
     def __str__(self):
-        status = str(self.blinker_front) + ' ' + str(self.blinker_rear) +' ' + str(self.engine)+' '+str(self.fuel)
+        status = str(self.blinker_front) + ' ' + str(self.blinker_rear) +\
+            ' ' + str(self.light)+' '+str(self.environment)+' '+ \
+            ' ' + str(self.engine)+' '+ str(self.fuel)
         return status
 
     def do_work(self):
@@ -30,14 +38,14 @@ class Vehicle:
                 self.engine.modify_gear(1)
             if key == 'd':
                 self.engine.modify_gear(-1)
-            #if key == 'r':
-            #    self.environment.modify_lum(10)
-            #if key == 'f':
-            #    self.environment.modify_lum(-10)
+            if key == 'r':
+                self.environment.modify_lum(10)
+            if key == 'f':
+                self.environment.modify_lum(-10)
             if key == 'q':
                 exit()
             
-            #self.light.update()
+            self.light.update()
             self.fuel.update()
 
 
