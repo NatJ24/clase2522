@@ -34,7 +34,6 @@ class Vehicle:
             #    self.environment.modify_lum(10)
             #if key == 'f':
             #    self.environment.modify_lum(-10)
-
             if key == 'q':
                 exit()
             
