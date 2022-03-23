@@ -7,3 +7,6 @@ class Environment:
         self.lum = value    # el usuario indica el valor de luminosidad del ambiente
     def get_lum(self):
         return self.lum
+    def __str__(self):
+        status = str(self.lum) +' '+ str('(luminosidad en %)')
+        return status

@@ -5,10 +5,10 @@ class Light:
         self.env=env
     
     def activate(self):
-        self.activate=True
+        self.activated=True
     
     def deactivate(self):
-        self.activate=False
+        self.activated=False
 
     def update(self):
         if self.env.get_lum()<40:
@@ -17,7 +17,7 @@ class Light:
             self.deactivate()
     
     def __str__(self):
-        if self.activate:
+        if self.activated:
             status = 'L'
         else: 
             status = 'R'
