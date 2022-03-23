@@ -11,6 +11,7 @@ class engine:
     def modify_gear(self, value):
         self.gear += value
     def get_speed(self):
+        """ Obtiene la velocidad"""
         if self.gear >=0:
             speed = (self.rpm*self.gear/5)/10
         elif self.rpm>0:

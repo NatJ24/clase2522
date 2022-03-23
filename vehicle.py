@@ -37,9 +37,8 @@ class Vehicle:
 
             if key == 'q':
                 exit()
-            
             #self.light.update()
-            #self.fuel.update()
+            self.fuel.update()
 
 
 if __name__ == "__main__":
