@@ -3,6 +3,8 @@ BLINKER_FRONT = 1
 BLINKER_REAR = 2
 
 class engine:
+    """clase del motor"""
+
     def __init__(self):
         self.rpm = 0
         self.gear = 0
@@ -11,7 +13,6 @@ class engine:
     def modify_gear(self, value):
         self.gear += value
     def get_speed(self):
-        """ Obtiene la velocidad"""
         if self.gear >=0:
             speed = (self.rpm*self.gear/5)/10
         elif self.rpm>0:

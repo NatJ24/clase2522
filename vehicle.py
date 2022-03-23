@@ -37,6 +37,7 @@ class Vehicle:
 
             if key == 'q':
                 exit()
+            
             #self.light.update()
             self.fuel.update()
 
