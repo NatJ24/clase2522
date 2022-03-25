@@ -6,6 +6,8 @@ class Fuel:
 
     def update(self):
         self.level = self.level - abs(self.engine.get_speed())*0.01
+        if self.level < 0:
+            self.level = 0
     
     def __str__(self):
         status = str(self.level) + str('L')
