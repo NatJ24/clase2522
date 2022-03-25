@@ -8,10 +8,19 @@ class engine:
     def __init__(self):
         self.rpm = 0
         self.gear = 0
+
     def modify_rpm(self, value):
         self.rpm += value
+        if self.rpm < 0:
+            self.rpm = 0
+
     def modify_gear(self, value):
         self.gear += value
+        if self.gear <-1:
+            self.gear = 1
+        elif self.gear > 5:
+            self.gear = 5
+
     def get_speed(self):
         if self.gear >=0:
             speed = (self.rpm*self.gear/5)/10
@@ -20,6 +29,7 @@ class engine:
         else:
             speed = 0
         return speed
+
     def __str__(self):
             #print(self.rpm, ' ','rpm',' ',self.gear,' ',self.get_speed())
             status = str(self.rpm) + str('rpm')+ str(' ') + str(self.gear)+ str(' ') +str(self.get_speed()) + str('Km/h')
